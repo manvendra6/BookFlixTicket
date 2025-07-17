@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Footer from './components/footer/page.jsx';
 import Navbarpage from './components/Navbar/page.jsx';
-import Movies from './pages/movies.jsx';
+import Movies from './pages/Movies.jsx';
 import HomePage from './pages/Home.jsx';
 import Ticketpage from './pages/Ticketpage.jsx';
 import Sheetpage from './pages/Sheet.jsx';
