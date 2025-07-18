@@ -1,6 +1,6 @@
 import express from "express";
  
-import router from "./src/Routes/UserRoutes.js";
+import router from "./src/Routs/Userrouts.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
@@ -16,9 +16,5 @@ app.use(cors({
 app.use("/api",router);
  
 
-// Addshow
  
-
-
-
 export { app };

@@ -1,26 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useContext } from 'react';
+import UserContex from '../../contex/Usercontex.js';
+import { useEffect } from 'react';
 
 const Listbooking = () => {
-  const [shows, setShows] = useState([]);
-
-  useEffect(() => {
-    const storedParams = JSON.parse(localStorage.getItem('templateParams'));
-
-    if (storedParams) {
-     
-      const bookings = Array.isArray(storedParams) ? storedParams : [storedParams];
-      setShows(bookings);
-    }
-  }, []);
-
+ const {template,settotalbooking}= useContext(UserContex)
+ 
+   useEffect(()=>{
+    settotalbooking((prev)=>[...prev,template.length])
+   },[template])
   return (
     <div className="px-4 py-8 max-w-6xl mx-auto">
-      <h1 className="text-2xl font-semibold mb-6 text-center "> Booked Shows</h1>
+      <h1 className="text-2xl font-semibold mb-6   flex justify-center"> <p className='text-[#D63854] '>Booked</p> Shows</h1>
 
-      {shows.length === 0 ? (
+      {template.length === 0 ? (
         <p className="text-center text-gray-500">No bookings found.</p>
       ) : (
-        shows.map((show, index) => (
+        template.map((show, index) => (
           <div
             key={index}
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 bg-[#39151D] text-white font-semibold p-4 rounded-md mt-4"

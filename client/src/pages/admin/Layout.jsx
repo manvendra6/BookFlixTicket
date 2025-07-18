@@ -7,7 +7,7 @@ import { FaRegPlayCircle } from "react-icons/fa";
 import UserContex from '../../contex/Usercontex';
 import { useContext } from 'react';
 const Layout = () => {
-  const {moviesData}=useContext(UserContex)
+  const {moviesData,totalbooking}=useContext(UserContex)
    
     const [userId, setUserId] = useState(0);
     const [data,setdata]=useState([]);
@@ -50,7 +50,7 @@ const Layout = () => {
             <div className='flex gap-10 bg-[#210F14] py-4 px-4 items-center justify-center rounded-md border border-white border-opacity-30 '>
               <div >
                 <p className='text-md font-semibold'>Total Bookings</p>
-                <p className='font-semibold text-xl'>15</p>
+                <p className='font-semibold text-xl'>{totalbooking}</p>
 
               </div>
               <p><TbBrandBooking className='text-3xl' /></p>

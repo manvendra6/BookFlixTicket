@@ -32,8 +32,9 @@ const AppContent =  () => {
 useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get('https://bookflixticket-1.onrender.com/api/get/movies');
+        const response = await axios.get('http://localhost:7000/api/get/movies');
         setMoviesData(response.data.Getmovie);
+       
         localStorage.setItem('moviesid',response.data.Getmovie._id);
     
        

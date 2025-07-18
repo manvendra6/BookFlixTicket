@@ -3,6 +3,8 @@ import { FiClock } from "react-icons/fi";
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 import { useLocation } from 'react-router-dom';
+import { useContext } from 'react';
+import UserContex from '../contex/Usercontex.js';
 
 const Sheetpage = () => {
   const bookedSeatsByTime = {
@@ -36,6 +38,7 @@ const Sheetpage = () => {
   const [selectedTime, setSelectedTime] = useState('');
   const Location = useLocation();
   const { selectedDate, title, rate } = Location.state || {};
+  const {settemplate}=useContext(UserContex)
 
   const sendBookingEmail = async () => {
     const to_email = localStorage.getItem('userEmail') || '';
@@ -63,16 +66,14 @@ const Sheetpage = () => {
       month: selectedDate.month,
       title: title,
     };
-    
-    localStorage.setItem("templateParams", JSON.stringify([templateParams]));
-
+    settemplate((prev)=> [...prev,templateParams]);
     try {
-      await emailjs.send(
-        'service_i2jdgca',
-        'template_8arg71j',
-        templateParams,
-        'QYr3ofWCxSABqhafJ'
-      );
+      // await emailjs.send(
+      //   'service_i2jdgca',
+      //   'template_8arg71j',
+      //   templateParams,
+      //   'QYr3ofWCxSABqhafJ'
+      // );
       toast.success('Email sent successfully!');
     } catch (error) {
       console.error('EmailJS Error:', error);
@@ -114,7 +115,7 @@ const Sheetpage = () => {
             <p className="text-xs md:text-sm text-gray-400 py-2 md:py-3">SCREEN SIDE</p>
           </div>
 
-          {/* Seat grid */}
+        
           <div className="w-full  ">
             <div className="min-w-[300px]">
          

@@ -100,8 +100,7 @@ const Navbarpage = () => {
         <Link to="/">
           <h1 className='text-3xl md:text-4xl font-semibold first-letter:text-[#D63854]'>BookFlix</h1>
         </Link>
-
-        {/* Desktop Links */}
+ 
         <div className='hidden md:flex px-5 py-3 rounded-full backdrop-blur-3xl border border-white border-opacity-30'>
           <ul className='flex gap-6 md:gap-8 text-sm md:text-md font-semibold'>
             <li><Link to="/">Home</Link></li>
@@ -130,7 +129,7 @@ const Navbarpage = () => {
         </div>
       </div>
 
-      {/* Mobile Slide-out Menu */}
+ 
       {mobileMenuOpen && (
         <div className="fixed top-0 left-0 w-full h-screen bg-black bg-opacity-90 z-50 flex flex-col items-start px-6 pt-20 text-white">
           <RxCross2 className="absolute top-4 right-4 text-3xl cursor-pointer" onClick={() => setMobileMenuOpen(false)} />
@@ -154,7 +153,7 @@ const Navbarpage = () => {
         </div>
       )}
 
-      {/* Login / Signup Modal */}
+ 
       {page && (
         <div className='fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center'>
           <div className='bg-white w-[90%] max-w-[400px] h-[540px] rounded-xl shadow-lg relative'>
