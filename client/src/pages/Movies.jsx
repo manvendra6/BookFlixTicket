@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import UserContex from '../contex/Usercontex';
 
-const Movies = ({ moviesdata}) => {
+
+
+const Movies = ( ) => {
    const {moviesData}=useContext(UserContex)
   return (
    
@@ -15,6 +17,8 @@ const Movies = ({ moviesdata}) => {
 
       <div className='max-w-[1400px] mx-auto mb-10 mt-[150px]  relative'>
         <h1 className='text-3xl font-bold pb-6'>Now Showing</h1>
+
+
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
           {moviesData.map((movie) => (
             <div key={movie._id} className='bg-[#1E2939] rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-2 cursor-pointer'>

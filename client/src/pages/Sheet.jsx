@@ -68,12 +68,12 @@ const Sheetpage = () => {
     };
     settemplate((prev)=> [...prev,templateParams]);
     try {
-      // await emailjs.send(
-      //   'service_i2jdgca',
-      //   'template_8arg71j',
-      //   templateParams,
-      //   'QYr3ofWCxSABqhafJ'
-      // );
+      await emailjs.send(
+        'service_i2jdgca',
+        'template_8arg71j',
+        templateParams,
+        'QYr3ofWCxSABqhafJ'
+      );
       toast.success('Email sent successfully!');
     } catch (error) {
       console.error('EmailJS Error:', error);
